@@ -1,0 +1,9 @@
+mcp[cli]>=1.7.1
+
+[dev]
+pytest
+ruff
+mypy
+
+[test]
+pytest-cov

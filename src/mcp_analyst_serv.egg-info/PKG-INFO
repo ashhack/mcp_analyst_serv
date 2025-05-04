@@ -1,0 +1,62 @@
+Metadata-Version: 2.4
+Name: mcp-analyst-serv
+Version: 0.1.0
+Summary: MCP Server with Prompt, Tools for Analytics
+Author-email: Ashutosh Singh <ashutosh71195@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/mcp-analyst-serv
+Project-URL: Bug Tracker, https://github.com/yourusername/mcp-analyst-serv/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: mcp[cli]>=1.7.1
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Provides-Extra: test
+Requires-Dist: pytest-cov; extra == "test"
+
+# mcp_analyst_serv
+MCP Server with Prompt, Tools for Analytics
+
+## CI/CD with GitHub Actions
+
+This project uses GitHub Actions for continuous integration and deployment:
+
+### CI Workflow
+
+The CI workflow (`ci-cd.yml`) runs on every push to the main branch and on pull requests to main. It:
+
+1. Sets up Python 3.13
+2. Installs dependencies
+3. Runs linting with ruff
+4. Validates that the server can start
+
+### Deployment Workflow
+
+The deployment workflow (`deploy.yml`) runs after the CI workflow completes successfully on the main branch. It:
+
+1. Sets up Python 3.13
+2. Installs dependencies
+3. Builds the package
+4. Contains placeholder steps for deployment
+
+### Customizing Deployment
+
+To customize the deployment for your specific environment:
+
+1. Edit `.github/workflows/deploy.yml`
+2. Uncomment and configure one of the example deployment methods or add your own
+3. Set up any necessary secrets in your GitHub repository settings
+
+Example deployment targets include:
+- Server via SSH
+- AWS
+- Azure
+- Google Cloud
+- Heroku

@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-analyst-serv = mcp_analyst_serv.__main__:main
