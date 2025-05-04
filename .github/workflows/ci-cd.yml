@@ -21,7 +21,8 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install .[dev] || pip install .
+        pip install build wheel
+        pip install -e .
         
     - name: Lint with ruff
       run: |
@@ -29,7 +30,18 @@ jobs:
         ruff check .
       continue-on-error: true  # Optional: set to false to make linting errors fail the workflow
       
+    - name: Build package
+      run: |
+        python -m build
+        
     - name: Validate server
       run: |
-        # Simple validation to check if the server can start
-        python -c "import main; print('Server validation successful')"
+        # Validate that the package can be imported and server can be created
+        python -c "from mcp_analyst_serv.server import create_server; server = create_server(); print(f'Server validation successful: {server.name}')"
+        
+    - name: Test CLI entry point
+      run: |
+        # Install the package in the current environment
+        pip install -e .
+        # Verify the CLI entry point is properly configured
+        which mcp-analyst-serv
