@@ -1,5 +1,8 @@
+LICENSE
+MANIFEST.in
 README.md
 pyproject.toml
+setup.py
 src/mcp_analyst_serv/__init__.py
 src/mcp_analyst_serv/__main__.py
 src/mcp_analyst_serv/server.py
@@ -9,3 +12,5 @@ src/mcp_analyst_serv.egg-info/dependency_links.txt
 src/mcp_analyst_serv.egg-info/entry_points.txt
 src/mcp_analyst_serv.egg-info/requires.txt
 src/mcp_analyst_serv.egg-info/top_level.txt
+tests/__init__.py
+tests/test_server.py

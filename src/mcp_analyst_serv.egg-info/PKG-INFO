@@ -6,27 +6,114 @@ Author-email: Ashutosh Singh <ashutosh71195@gmail.com>
 License: MIT
 Project-URL: Homepage, https://github.com/yourusername/mcp-analyst-serv
 Project-URL: Bug Tracker, https://github.com/yourusername/mcp-analyst-serv/issues
+Project-URL: Source, https://github.com/yourusername/mcp-analyst-serv
 Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3
 Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
 Requires-Python: >=3.13
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: mcp[cli]>=1.7.1
 Provides-Extra: dev
-Requires-Dist: pytest; extra == "dev"
-Requires-Dist: ruff; extra == "dev"
-Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: ruff>=0.0.280; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: isort>=5.0.0; extra == "dev"
 Provides-Extra: test
-Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: pytest-cov>=4.0.0; extra == "test"
+Requires-Dist: pytest-mock>=3.0.0; extra == "test"
+Dynamic: license-file
 
-# mcp_analyst_serv
+# MCP Analyst Server
+
 MCP Server with Prompt, Tools for Analytics
+
+## Features
+
+- FastAPI-based MCP (Model-Controller-Prompt) server
+- Built-in tools for analytics
+- Easy to extend with custom tools and resources
+- Type hints and modern Python (3.13+)
+
+## Installation
+
+### From PyPI
+
+```bash
+pip install mcp-analyst-serv
+```
+
+### From source
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/mcp-analyst-serv.git
+cd mcp-analyst-serv
+
+# Install in development mode
+pip install -e .[dev]
+```
+
+## Usage
+
+### Command Line
+
+```bash
+# Start the server
+mcp-analyst-serv
+```
+
+### Python API
+
+```python
+from mcp_analyst_serv.server import create_server
+
+# Create and run the server
+server = create_server()
+print(f"Server running with {len(server.tools)} tools and {len(server.resources)} resources")
+```
+
+## Development
+
+### Running Tests
+
+```bash
+# Install test dependencies
+pip install -e .[test]
+
+# Run tests
+pytest
+```
+
+### Code Style
+
+This project uses:
+- Black for code formatting
+- isort for import sorting
+- ruff for linting
+- mypy for type checking
+
+```bash
+# Install development dependencies
+pip install -e .[dev]
+
+# Run code formatters
+black .
+isort .
+
+# Run linters
+ruff check .
+mypy .
+```
 
 ## CI/CD with GitHub Actions
 
-This project uses GitHub Actions for continuous integration and deployment:
+This project uses GitHub Actions for continuous integration and deployment.
 
 ### CI Workflow
 

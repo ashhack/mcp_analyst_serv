@@ -1,9 +1,12 @@
 mcp[cli]>=1.7.1
 
 [dev]
-pytest
-ruff
-mypy
+pytest>=7.0.0
+ruff>=0.0.280
+mypy>=1.0.0
+black>=23.0.0
+isort>=5.0.0
 
 [test]
-pytest-cov
+pytest-cov>=4.0.0
+pytest-mock>=3.0.0

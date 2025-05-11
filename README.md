@@ -1,9 +1,88 @@
-# mcp_analyst_serv
+# MCP Analyst Server
+
 MCP Server with Prompt, Tools for Analytics
+
+## Features
+
+- FastAPI-based MCP (Model-Controller-Prompt) server
+- Built-in tools for analytics
+- Easy to extend with custom tools and resources
+- Type hints and modern Python (3.13+)
+
+## Installation
+
+### From PyPI
+
+```bash
+pip install mcp-analyst-serv
+```
+
+### From source
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/mcp-analyst-serv.git
+cd mcp-analyst-serv
+
+# Install in development mode
+pip install -e .[dev]
+```
+
+## Usage
+
+### Command Line
+
+```bash
+# Start the server
+mcp-analyst-serv
+```
+
+### Python API
+
+```python
+from mcp_analyst_serv.server import create_server
+
+# Create and run the server
+server = create_server()
+print(f"Server running with {len(server.tools)} tools and {len(server.resources)} resources")
+```
+
+## Development
+
+### Running Tests
+
+```bash
+# Install test dependencies
+pip install -e .[test]
+
+# Run tests
+pytest
+```
+
+### Code Style
+
+This project uses:
+- Black for code formatting
+- isort for import sorting
+- ruff for linting
+- mypy for type checking
+
+```bash
+# Install development dependencies
+pip install -e .[dev]
+
+# Run code formatters
+black .
+isort .
+
+# Run linters
+ruff check .
+mypy .
+```
 
 ## CI/CD with GitHub Actions
 
-This project uses GitHub Actions for continuous integration and deployment:
+This project uses GitHub Actions for continuous integration and deployment.
 
 ### CI Workflow
 
